@@ -28,8 +28,9 @@ filterButton.on('click', function(){
     tbody.html('');
     //get a reference on the datetime input
     var inputElement = d3.select('#datetime');
-    //extract the input date 
+    //extract the input date and clear value 
     var inputDate = inputElement.property('value');
+    d3.select('#datetime').property('value', '');
     //define filter varibale and display rows matching search criteria 
     var searchResults = tableData.filter(search => search.datetime === inputDate);
     searchResults.forEach((UFOSearch) => {
